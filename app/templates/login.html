@@ -1,0 +1,18 @@
+{% if error%}
+<p class=error><strong>Error:</strong> {{ error }} </p>
+{% endif %}
+
+<form action="" method=POST>
+  <fieldset>
+  	<legend class="legend">Login</legend>
+    <div class="input">
+    	<input type="text" placeholder="User name" name="username" value="{{request.form.username}}" required />
+    </div>
+    <br>
+    <div class="input">
+    	<input type="password" placeholder="Password" name="password" value="{{request.form.password}}" required />
+    </div>
+    <br>
+    <input type="submit" value="Login">
+  </fieldset>
+</form>

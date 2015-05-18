@@ -1,74 +1,33 @@
-<!doctype html>
-<html class="no-js" lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>{% block title %}yoursite.com{% endblock %}</title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
-  <meta name="author" content="">
-  <link rel="shortcut icon" href="/static/favicon.ico">
-
-  <!-- HTML5 shim, for IE 6-8 support of HTML elements -->
-  <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-  <![endif]-->
-
-  <link rel="stylesheet" href="/static/css/bootstrap.min.css">
-  <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
-  <link rel="stylesheet/less" href="/static/css/main.less">
-  {% block css %}{% endblock %}
-
-  <!-- Rather use `less.js` to dynamically compile your `stylesheet/less` files? -->
-  <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/1.4.1/less.min.js"></script>
-  <script>window.less || document.write('<script src="/static/js/less.js">\x3C/script>')</script>
-
-  <!-- Need Modernizr? Uncomment the following script. -->
-  <!-- <script src="/static/js/modernizr.js"></script> -->
-
-</head>
-
-<body>
-
-  <header>
-    {% include "header.html" %}
-  </header>
-
-  <div id="main" role="main">
-    {% block main %}{% endblock %}
-  </div>
-
-  <footer>
-    {% include "footer.html" %}
-  </footer>
-
-
-  <!-- JavaScript at the bottom for fast page loading -->
-
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if necessary -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="/static/js/libs/jquery.js">\x3C/script>')</script>
-
-
-  <!-- Additional JavaScript libraries and plugins... -->
-  {% block js %}{% endblock %}
-
-
-  <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID -->
-  <script>
-    var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
-  </script>
-
-
-  <!-- Prompt IE < 8 users to install Chrome Frame.  -->
-  <!--[if lt IE 8 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Welcome</title>
+    {% endif %}
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<!--     <script type="text/javascript" src="{{ url_for('static', filename='JQ.js') }}"></script> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css') }}">
+  </head>
+   <body>
+<!--     <center>
+    <a href="/home"><input id="1" type="button" value="Home"></input></a>
+<a href="/profile"> <input id="2" type="button" value="Register"></input></a>
+   <a href="/profiles"><input id="3" type="button" value="Registred users"></input></a> 
+    <a href="/viewprofile"><input id="4" type="button" value="Profiles"></input></a>
+<a href="/gamelist"><input id="4" type="button" value="Games List"></input></a>
+</center> -->
+    <hr>
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }} </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  {% block content %}{% endblock %}
+  </body>
 </html>

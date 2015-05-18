@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <title>INFO3180-PROFILE-PAGE</title>
+    <style>
+      body{
+       
+  background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEl4rwlsg8WktESMChjdJIt5ctw-64Xy5OQQSld66LYNlC28Bw")
+}
+
+      
+      .data{
+        background-color: SKYBLUE;
+        margin-left: 500px;
+        position: relative;
+        border-style: solid;
+        border-bottom-width: 0px;
+        border-top-width: 0px;
+        padding-top: 15px;
+        padding-right: 40px;
+        padding-bottom: 15px;
+        padding-left: 40px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+      
+      #picture{
+        width: 480px;
+        height: 480px;
+        position: absolute;
+        margin-top: 0px;
+        margin-right: 5px;
+      }
+      
+      #name{
+        border-bottom-width: 3.5px;
+        border-top-width: 3.5px;
+        margin-top: 0px;
+        margin-bottom: 20px;
+      }
+      
+      #date{
+        border-top-width: 3.5px;
+        border-bottom-width: 3.5px;
+      }
+      
+      #dollar{
+         padding-bottom: 90px;
+         border-bottom-width: 3.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img id="picture" src="/static/{{ files }}" alt='ERROR'></img>
+      <h1 class="data" id="name">{{ fname }} {{ lname }}</h1>
+      <h3 class="data" id="date">Date Added {{ profile_add_on }}</h2>
+      <h4 class="data">Username: {{ username }}</h3>
+      <h4 class="data">ID: {{ userid }}</h3>
+      <h4 class="data">Age: {{ age }}</h3>
+      <h4 class="data">Highest Score: {{ highscore }}</h3>
+      <h4 class="data" id="dollar">TDallor: {{ tdollar }}</h3>
+    </div>
+  </body>  
+</html>

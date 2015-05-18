@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+  <h4></h4>
+  <hr>
+  <h1>Sign Up</h1>
+  <form action="" method="post" name="profile 1" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <table>
+      <tr>
+        <td>First Name:</td>
+        <td>{{ form.fname(size=80) }}
+          {% for error in form.fname.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+        </td>
+      </tr>
+      <tr>
+        <td>Last Name:</td>
+        <td>{{ form.lname(size=80) }}
+          {% for error in form.lname.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+        </td>
+      </tr>
+      <tr>
+        <td>Username:</td>
+        <td>{{ form.username(size=80) }}
+          {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+        </td>
+      </tr>
+      <tr>
+        <td>Date of Birth:</td>
+        <td>{{ form.age }} yyyy-mm-dd
+          {% for error in form.age.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+        </td>
+      </tr>
+      <tr>
+        <td>Sex:</td>
+        <td>{% for subfield in form.sex %}
+              {{ subfield }} {{ subfield.label }}
+            {% endfor %}
+          
+            {% for error in form.sex.errors %}
+              <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </td>
+        <tr>
+        <td>Image:</td>
+        <td>{{ form.image }}
+          {% for error in form.image.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+        </td>
+      </tr>
+    </table>
+    <p><input type="submit" value="Sign Up" /></p>
+  </form>
+{% endblock %}

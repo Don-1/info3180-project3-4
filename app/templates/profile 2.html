@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% for i in u %}
+<a href="gui_profile/{{ i.userid }}">{{ i.username }}</a><br>
+{% endfor %}<br><br>
+
+<h2>JSON ('profile/id')</h2>
+{% for i in u %}
+<a href="profile/{{ i.userid }}">{{ i.username }}</a><br>
+{% endfor %}
+
+{% endblock %}

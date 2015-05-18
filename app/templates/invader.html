@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>melonJS</title>
+  <meta name="description" content="melonJS homepage" />
+  <meta name="keywords" content="melonJS, HTML5, javascript, game, engine, framework" />
+  <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+  <link rel="stylesheet" type="text/css" href="app/invader.css" title="style" />
+</head>
+
+<body>
+    <div id="screen"></div>
+    <script type="text/javascript" src="static/invader-lib/melonJS-2.1.0.js"></script>
+    <script type="text/javascript" src="static/invader-lib/plugins/debug/debugPanel.js"></script>
+
+    <script type="text/javascript" src="static/invader-js/game.js"></script>
+    <script type="text/javascript" src="static/invader-js/resources.js"></script>
+    <script type="text/javascript" src="static/invader-js/screens/play.js"></script>
+    <script type="text/javascript" src="static/invader-js/enemy.js"></script>
+    <script type="text/javascript" src="static/invader-js/laser.js"></script>
+    <script type="text/javascript" src="static/invader-js/player.js"></script>
+    <script type="text/javascript" src="static/invader-js/enemy_manager.js"></script>
+
+    <script type="text/javascript">
+        /* Bootstrap */
+        window.onReady(function onReady() {
+            game.onload();
+        });
+    </script>
+</body>
+</html>

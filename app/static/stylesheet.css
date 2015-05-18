@@ -1,0 +1,45 @@
+body{
+  background:url("http://smashingyolo.com/wp-content/uploads/2014/04/Best-Gaming-Wallpapers-33.jpg")
+}
+
+.data{
+  background-color: blue;
+  margin-left: 500px;
+  position: relative;
+  border-style: solid;
+  border-bottom-width: 0px;
+  border-top-width: 0px;
+  border-color: red;
+  padding-top: 15px;
+  padding-right: 40px;
+  padding-bottom: 15px;
+  padding-left: 40px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+      
+#picture{
+  width: 480px;
+  height: 500px;
+  position: absolute;
+  margin-top: 0px;
+  margin-right: 5px;
+}
+
+#name{
+  border-bottom-width: 3.5px;
+  border-top-width: 3.5px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+      
+#date{
+  border-top-width: 3.5px;
+  border-bottom-width: 3.5px;
+}
+      
+#dollar{
+  padding-bottom: 90px;
+  border-bottom-width: 3.5px;
+}
+

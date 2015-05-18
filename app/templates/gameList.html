@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game List</title>
+    </head>
+  <style>
+    
+    #canvas{
+      background-color:lightblue;
+      hieght:530px;
+      width:450px;
+      margin-top:20px;
+    }
+/*     body{
+      background:url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEl4rwlsg8WktESMChjdJIt5ctw-64Xy5OQQSld66LYNlC28Bw");
+    } */
+    
+  </style>
+   <body>
+    <center>
+    <a href="/index"><input id="1" type="button" value="Home"></input></a>
+<a href="/profile"> <input id="2" type="button" value="Profile"></input></a>
+    <hr>
+  <div id="maincanvas">
+  <div id="canvas">
+    <a href="/boilerplate"> <img src="http://melonjs.org/media/examples/tutorial.png"> <p>Platform</p>
+    </a>
+    <br><hr>
+   <a href="/invader">  <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRTC3dlLNwaT7roVHRGc_TTF-EhpwAjCxi2HEx5YcIIXGOUf5r8" width="313">
+    <p>Space Invader</p>
+    </a>
+    </div>
+    </div>
+    </body>
+</html>
+{% endblock %}
